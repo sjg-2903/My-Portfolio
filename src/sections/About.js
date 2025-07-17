@@ -79,7 +79,7 @@ const styles = {
 
   listBox: {
     display: 'flex',
-    gap: 4,
+    gap: 2,
     flexWrap: 'wrap',
   },
   italicNote: {
@@ -98,7 +98,7 @@ const styles = {
     textAlign: 'justify',
     fontFamily: "Sora"
   },
-  
+
 
 };
 
@@ -114,9 +114,9 @@ const About = () => {
           <Box
             sx={{
               position: 'absolute',
-              top: 25,
-              left: 10,
-              width: '80%', // Match image width
+              top: { xs: 10, sm: 20, md: 25 },     // Responsive spacing
+              left: { xs: 5, sm: 10, md: 15 },
+              width: '80%',
               height: '100%',
               bgcolor: '#e9e9e9',
               zIndex: 0,
@@ -152,27 +152,18 @@ const About = () => {
             Outside of development, I have a passion for video editing and am experienced with tools like Canva and VN Editor, among others. I enjoy combining my technical and creative skills — whether it's building interactive user interfaces or editing crisp, engaging videos.
           </Typography>
 
-          <Typography variant="body1" sx={{ mb: 1 , fontFamily : "Sora",  fontSize: '1rem'}}>
+          <Typography variant="body1" sx={{ mb: 1, fontFamily: "Sora", fontSize: '1rem' }}>
             Finally, some quick bits about me:
           </Typography>
-
-          <Box sx={styles.listBox}>
-            <List dense>
-              <ListItem>
-                <ListItemText primary="🎓 B.E. in Computer Science & Engineering" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="📚 Lifelong Learner & Tech Explorer" />
-              </ListItem>
-            </List>
-            <List dense>
-              <ListItem>
-                <ListItemText primary="🧑‍💻 Full Stack Developer" />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="🎥 Passionate & Skilled Video Editor" />
-              </ListItem>
-            </List>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+            <Box>
+              <Typography sx={{ fontSize: '1rem', mb: 0.5 }}>🎓 B.E. in Computer Science & Engineering</Typography>
+              <Typography sx={{ fontSize: '1rem', mb: 0.5 }}>📚 Lifelong Learner & Tech Explorer</Typography>
+            </Box>
+            <Box>
+              <Typography sx={{ fontSize: '1rem', mb: 0.5 }}>🧑‍💻 Full Stack Developer</Typography>
+              <Typography sx={{ fontSize: '1rem', mb: 0.5 }}>🎥 Passionate & Skilled Video Editor</Typography>
+            </Box>
           </Box>
           <Typography variant="body2" sx={styles.italicNote}>
             Got a project in mind? Whether it's a stunning website 🌐, a powerful mobile app 📱, or sleek video editing 🎬 — I’m here to help bring your ideas to life. Let’s build something awesome together!
