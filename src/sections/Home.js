@@ -19,6 +19,7 @@ const styles = {
   },
   innerWrapper: {
     maxWidth: '1440px',
+    minHeight: '502px',
     width: '100%',
     display: 'flex',
     justifyContent: 'space-between',
@@ -30,7 +31,7 @@ const styles = {
     textAlign: { xs: 'center', md: 'left' },
   },
   heading: {
-    fontFamily: 'Inter, sans-serif',
+    fontFamily: "'ZapfHumnst BT', sans-serif",
     display: 'flex',
     alignItems: 'center',
     gap: 1,
@@ -43,7 +44,7 @@ const styles = {
     mt: 2,
     color: '#555',
     lineHeight: 1.8,
-    fontFamily: 'Inter, sans-serif',
+    fontFamily: 'Sora',
     textAlign: 'justify',
     fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
     maxWidth: { xs: '90%', sm: '85%', md: '90%', lg: "100%" },
@@ -93,6 +94,13 @@ const styles = {
     height: 'auto',
     verticalAlign: 'middle',
   },
+  iconBase: {
+    cursor: 'pointer',
+    transition: 'color 0.3s ease, transform 0.3s ease',
+    '&:hover': {
+      transform: 'scale(1.2)',
+    },
+  },
 };
 
 const Home = () => {
@@ -134,29 +142,17 @@ const Home = () => {
             <GitHubIcon
               fontSize="medium"
               onClick={() => window.open(SOCIAL_LINKS.github, '_blank', 'noopener,noreferrer')}
-              sx={{
-                cursor: 'pointer',
-                transition: 'color 0.3s ease, transform 0.3s ease',
-                '&:hover': { color: '#333', transform: 'scale(1.2)' },
-              }}
+              sx={{ ...styles.iconBase, '&:hover': { ...styles.iconBase['&:hover'], color: '#333', }, }}
             />
             <InstagramIcon
               fontSize="medium"
               onClick={() => window.open(SOCIAL_LINKS.instagram, '_blank', 'noopener,noreferrer')}
-              sx={{
-                cursor: 'pointer',
-                transition: 'color 0.3s ease, transform 0.3s ease',
-                '&:hover': { color: '#E1306C', transform: 'scale(1.2)' },
-              }}
+              sx={{ ...styles.iconBase, '&:hover': { ...styles.iconBase['&:hover'], color: '#E1306C', }, }}
             />
             <LinkedInIcon
               fontSize="medium"
               onClick={() => window.open(SOCIAL_LINKS.linkedin, '_blank', 'noopener,noreferrer')}
-              sx={{
-                cursor: 'pointer',
-                transition: 'color 0.3s ease, transform 0.3s ease',
-                '&:hover': { color: '#0077b5', transform: 'scale(1.2)' },
-              }}
+              sx={{ ...styles.iconBase, '&:hover': { ...styles.iconBase['&:hover'], color: '#0077b5', }, }}
             />
           </Stack>
         </Box>
